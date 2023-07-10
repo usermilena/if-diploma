@@ -1,0 +1,36 @@
+/* FOR DESKTOPS: */
+
+.top__apps {
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+}
+
+.top__apps--app-store {
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.top__apps--google-play {
+  width: 135px;
+  height: 40px;
+  margin-right: 17px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* FOR MOBILES: */
+
+  .top__apps {
+    margin-top: 32px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* FOR TABLETS: */
+
+  .top__apps {
+    margin-top: 32px;
+  }
+}

@@ -1,0 +1,24 @@
+/* FOR DESKTOPS: */
+
+.list {
+  display: flex;
+  margin: 105px auto 0;
+  /* gap: 16px; */
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  /* FOR MOBILES: */
+
+  .list {
+    margin-top: 32px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* FOR TABLETS: */
+
+  .list {
+    margin: 50px auto 0;
+  }
+}

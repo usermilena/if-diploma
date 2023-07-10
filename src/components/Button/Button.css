@@ -1,0 +1,37 @@
+/* FOR DESKTOPS */
+
+.top__search--button {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--general-white);
+  background-color: var(--accent-blue);
+  border-radius: 8px;
+  padding: 18px 0;
+  margin: 0 auto;
+  width: 16%;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* FOR MOBILES */
+
+  .top__search--button {
+    font-size: 19px;
+    border-radius: 4px;
+    padding: 14px 0;
+    width: 100%;
+    flex: 1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* FOR TABLETS */
+
+  .top__search--button {
+    font-size: 22px;
+    border-radius: 4px;
+    padding: 14px 0;
+    width: 100%;
+    flex: 1;
+  }
+}

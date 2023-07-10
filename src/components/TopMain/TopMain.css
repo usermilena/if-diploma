@@ -1,0 +1,34 @@
+/* FOR DESKTOPS: */
+
+.top__main--container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.top__title {
+  font-size: 50px;
+  font-weight: 500;
+  color: var(--general-white);
+  margin: 200px 0 145px;
+  line-height: 1.18em;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  /* FOR MOBILES: */
+
+  .top__title {
+    font-size: 30px;
+    margin: 52px 0 31px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* FOR TABLETS: */
+
+  .top__title {
+    font-size: 40px;
+    margin: 52px 0 31px;
+  }
+}

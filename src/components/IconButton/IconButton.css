@@ -1,0 +1,19 @@
+.top__search--amount__filter--button {
+  font-size: 18px;
+  text-align: center;
+  color: var(--accent-blue);
+  background-color: var(--general-white);
+  border: 1px solid var(--accent-blue);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.top__search--amount__filter--button.disabled {
+  color: #cecece;
+  border-color: #cecece;
+}

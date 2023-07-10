@@ -1,0 +1,46 @@
+/* FOR DESKTOPS: */
+
+.top__search {
+  display: flex;
+  background-color: var(--general-white);
+  border: 3px solid var(--stroke-color);
+  border-right: none;
+  border-radius: 8px;
+  height: 64px;
+  font-size: 18px;
+  align-items: center;
+  border-left: none;
+  position: relative;
+}
+
+.top__search ::placeholder {
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  /* FOR MOBILES: */
+
+  .top__search {
+    background-color: var(--accent-yellow);
+    border: none;
+    border-radius: 0;
+    height: auto;
+    font-size: 15px;
+    flex-direction: column;
+    padding: 8px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* FOR TABLETS: */
+
+  .top__search {
+    background-color: var(--accent-yellow);
+    border: none;
+    border-radius: 0;
+    height: auto;
+    font-size: 17px;
+    flex-direction: column;
+    padding: 8px;
+  }
+}

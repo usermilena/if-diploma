@@ -1,0 +1,8 @@
+.hotelWrapper {
+  background: var(--general-blue);
+  padding: 51px 0 120px;
+}
+
+.hotel {
+  padding: 50px 104px 0;
+}

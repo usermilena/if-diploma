@@ -1,0 +1,49 @@
+/* FOR DESKTOPS: */
+
+.item {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  flex: 1;
+}
+
+.item > img {
+  width: 296px;
+  height: 296px;
+  cursor: pointer;
+}
+
+.hotel {
+  color: var(--accent-blue);
+  margin-top: 24px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.hotel--location {
+  color: var(--secondary-text);
+  margin-top: 24px;
+  width: 100%;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* FOR MOBILES: */
+
+  .item {
+    font-size: 12px;
+  }
+
+  .item > img {
+    width: 156px;
+    height: 156px;
+  }
+
+  .hotel {
+    margin-top: 8px;
+  }
+
+  .hotel--location {
+    margin-top: 4px;
+  }
+}

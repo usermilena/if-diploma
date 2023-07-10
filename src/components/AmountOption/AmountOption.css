@@ -1,0 +1,22 @@
+.top__search--amount__filter--options__wrapper {
+  display: flex;
+  align-items: center;
+  width: 215px;
+  justify-content: space-between;
+}
+
+.top__search--amount__filter--options__wrapper:nth-child(2) {
+  margin: 12px 0;
+}
+
+.top__search--amount__filter--button__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 108px;
+  justify-content: space-between;
+}
+
+@reduxjs /toolkit @testing-library/react @testing-library/jest-dom @testing-library/user-event axios classnames prop-types react react-datepicker react-dom react-multi-carousel react-redux react-router-dom react-scripts redux-persist uuid web-vitals
+
+@trivago/prettier-plugin-sort-imports @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-plugin-react eslint-plugin-react-hooks husky;
