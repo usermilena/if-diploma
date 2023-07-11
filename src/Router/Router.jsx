@@ -9,7 +9,7 @@ import { LoginPage } from "../pages/LoginPage";
 export const Router = () => {
   return (
     <Routes>
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/" element={<LoginPage />} />
       <Route element={<ProtectedLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/hotels/:hotelId" element={<HotelPage />} />
@@ -17,3 +17,5 @@ export const Router = () => {
     </Routes>
   );
 };
+
+@reduxjs/toolkit @testing-library/jest-dom @testing-library/react @testing-library/user-event axios classnames prop-types react react-datepicker react-dom react-multi-carousel react-redux react-router-dom react-scripts redux-persist uuid web-vitals
