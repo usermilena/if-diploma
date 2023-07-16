@@ -37,7 +37,7 @@ export const SearchIcon = ({ className }) => {
   );
 };
 
-export const CloseIcon = ({ className }) => {
+export const CloseIcon = ({ className, onClick }) => {
   return (
     <svg
       width="16"
@@ -45,13 +45,14 @@ export const CloseIcon = ({ className }) => {
       viewBox="0 0 16 17"
       fill="var(--textLight)"
       className={className}
+      onClick={onClick}
     >
       <path d="M16 2.5805L14.3886 0.971375L8 7.3508L1.61143 0.971375L0 2.5805L6.38857 8.95992L0 15.3393L1.61143 16.9485L8 10.569L14.3886 16.9485L16 15.3393L9.61143 8.95992L16 2.5805Z" />
     </svg>
   );
 };
 
-export const ArrowIcon = ({ className }) => {
+export const ArrowIcon = ({ className, onClick }) => {
   return (
     <svg
       width="16"
@@ -59,6 +60,7 @@ export const ArrowIcon = ({ className }) => {
       viewBox="0 0 16 10"
       fill="var(--text)"
       className={className}
+      onClick={onClick}
     >
       <path d="M14.12 0L8 6.10667L1.88 0L0 1.88L8 9.88L16 1.88L14.12 0Z" />
     </svg>
@@ -89,8 +91,8 @@ export const FacebookLogo = ({ className }) => {
       className={className}
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M21.125 0H4.875C2.18263 0 0 2.18263 0 4.875V21.125C0 23.8174 2.18263 26 4.875 26H21.125C23.8174 26 26 23.8174 26 21.125V4.875C26 2.18263 23.8174 0 21.125 0ZM20.4647 14.0024H18.0324V23.0066H13.9682V14.0024H12.3911V10.9679H13.9682V9.035C13.9682 6.50342 15.0218 4.99816 18.005 4.99816H21.0292V8.01895H19.2708C18.1076 8.01895 18.0324 8.45342 18.0324 9.26079L18.0289 10.9645H20.7932L20.4613 13.9989L20.4647 14.0024Z"
       />
     </svg>

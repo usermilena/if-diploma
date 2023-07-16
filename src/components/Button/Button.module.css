@@ -7,3 +7,20 @@
   padding: 10px 45px;
   cursor: pointer;
 }
+
+.fz12 {
+  font-size: 12px;
+  padding: 7px 23px;
+}
+
+.fz16 {
+  font-size: 16px;
+}
+
+.fz18 {
+  font-size: 18px;
+}
+
+.fz20 {
+  font-size: 20px;
+}

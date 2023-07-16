@@ -1,18 +1,19 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+import { ProtectedLayout } from "../components/ProtectedLayout";
+import { Home } from "../pages/Home";
 import { IntroPage } from "../pages/IntroPage";
-
-// import { ProtectedLayout } from "../components/ProtectedLayout";
+import { AllBooks } from "../sections/AllBooks";
 
 export const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<IntroPage />} />
-      {/* <Route element={<ProtectedLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/hotels/:hotelId" element={<HotelPage />} />
-      </Route> */}
+      <Route element={<ProtectedLayout />}>
+        <Route path="/" element={<IntroPage />} />
+        <Route path="home" element={<Home />} />
+        <Route path="all" element={<AllBooks />} />
+      </Route>
     </Routes>
   );
 };

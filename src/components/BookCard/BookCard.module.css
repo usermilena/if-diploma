@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  gap: 12px;
+  max-width: 256px;
+  max-height: 185px;
+}
+
+.wrapper:nth-child(n + 5) {
+  display: none;
+}
+
+.image {
+  border-radius: 8px;
+  border: 1px solid var(--textLight);
+  width: 122px;
+  height: 185px;
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

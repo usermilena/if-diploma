@@ -1,18 +1,23 @@
 .wrapper {
   border-radius: 8px;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--textLight);
   display: flex;
   align-items: center;
   padding: 13px;
   min-width: 500px;
 }
 
+.wrapper:focus-within {
+  border-color: var(--primary);
+}
+
 .input {
   color: var(--textDark);
   font-size: 16px;
   padding-left: 16px;
-  min-width: 215px;
   box-sizing: content-box;
+  width: 100%;
+  background-color: transparent;
 }
 
 .input::placeholder {
