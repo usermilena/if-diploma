@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import classNames from "classnames";
 
 import { ArrowIcon } from "../../components/Icons";
+import { useClickOutside } from "../../hooks/useClickOutside";
+import { AccountModal } from "../AccountModal";
 import styles from "./Menu.module.css";
 
 export const Menu = () => {
+  const [isAccountModalOpen, setIsAccountModalOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const ref = useRef();
+
+  useClickOutside(ref, () => {
+    if (isAccountModalOpen) setIsAccountModalOpen(false);
+  });
+
+  const openAccountModal = () => {
+    setIsAccountModalOpen(!isAccountModalOpen);
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -34,12 +46,16 @@ export const Menu = () => {
           Your orders
         </button>
       </div>
-      <div className={styles.accountWrapper}>
+      <div onClick={openAccountModal} className={styles.accountWrapper}>
         <img
-          src={require("../../assets/images/user-icon.png")}
-          alt="User icon"
+          src={require("../../assets/images/default-user-avatar.png")}
+          alt="Default user avatar"
+          unselectable="on"
         />
-        <ArrowIcon />
+        <ArrowIcon
+          className={classNames({ [styles.rotateArrow]: isAccountModalOpen })}
+        />
+        {isAccountModalOpen && <AccountModal />}
       </div>
     </div>
   );

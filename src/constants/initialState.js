@@ -7,6 +7,8 @@ export const INITIAL_STATE = {
   },
   books: {
     all: [],
+    my: [],
+    myWaiting: [],
   },
   hotels: {
     destination: null,
@@ -19,5 +21,6 @@ export const INITIAL_STATE = {
   },
   modals: {
     isSignUpOpen: false,
+    isAccountModalOpen: false,
   },
 };

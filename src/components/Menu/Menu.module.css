@@ -13,6 +13,7 @@
   align-items: center;
   gap: 17px;
   cursor: pointer;
+  position: relative;
 }
 
 .item {
@@ -24,4 +25,8 @@
 
 .active {
   color: var(--primary);
+}
+
+.rotateArrow {
+  transform: rotate(180deg);
 }

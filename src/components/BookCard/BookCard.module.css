@@ -3,10 +3,7 @@
   gap: 12px;
   max-width: 256px;
   max-height: 185px;
-}
-
-.wrapper:nth-child(n + 5) {
-  display: none;
+  cursor: default;
 }
 
 .image {

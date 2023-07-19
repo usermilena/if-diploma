@@ -20,7 +20,7 @@ export const IntroPage = () => {
 
   useEffect(() => {
     if (!loggedOut) {
-      navigate("/home");
+      navigate("home");
     }
   }, [loggedOut, navigate]);
 

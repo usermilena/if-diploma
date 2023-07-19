@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
 
-import { Footer } from "../Footer";
+import { Footer } from "../../sections/Footer";
 import { Header } from "../Header";
 import styles from "./ProtectedLayout.module.css";
 

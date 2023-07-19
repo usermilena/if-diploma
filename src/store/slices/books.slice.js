@@ -7,6 +7,11 @@ const booksSlice = createSlice({
   initialState: INITIAL_STATE.books,
   reducers: {
     setAllBooks: (state, action) => ({ ...state, all: action.payload }),
+    setMyBooks: (state, action) => ({ ...state, my: action.payload }),
+    setMyWaitingBooks: (state, action) => ({
+      ...state,
+      myWaiting: action.payload,
+    }),
   },
 });
 

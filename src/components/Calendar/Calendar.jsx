@@ -14,13 +14,8 @@ const range = (start, end) => {
   return ans;
 };
 
-export const Calendar = ({
-  name,
-  input,
-  className,
-  input: { value, onChange },
-}) => {
-  const [startDate, setStartDate] = useState(new Date());
+export const Calendar = ({ name, input, className }) => {
+  const [startDate, setStartDate] = useState(null);
   const years = range(new Date().getFullYear() - 120, new Date().getFullYear());
 
   const months = [
@@ -55,6 +50,7 @@ export const Calendar = ({
             className="calendar__header--button"
             onClick={decreaseMonth}
             disabled={prevMonthButtonDisabled}
+            unselectable="on"
           >
             {"<"}
           </button>
@@ -85,18 +81,15 @@ export const Calendar = ({
             className="calendar__header--button"
             onClick={increaseMonth}
             disabled={nextMonthButtonDisabled}
+            unselectable="on"
           >
             {">"}
           </button>
         </div>
       )}
-      // selected={startDate}
-      selected={startDate && isValid(startDate) ? startDate : null} // needs to be checked if it is valid date
-      // onChange={(date) => setStartDate(date)}
-      // onChange={(date) => input.onChange()}
+      selected={startDate}
       onChange={(date) => {
-        // On Change, you should use final-form Field Input prop to change the value
-        if (isValid(startDate)) {
+        if (isValid(date)) {
           input.onChange(format(new Date(date), "dd-MM-yyyy"));
           setStartDate(date);
         } else {

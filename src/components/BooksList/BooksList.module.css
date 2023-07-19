@@ -1,16 +1,11 @@
-.wrapper {
-  border-radius: 16px;
-  background-color: var(--bg);
-  padding: 26px 32px;
-  display: flex;
-  flex-direction: column;
-}
-
 .booksWrapper {
-  border-radius: 16px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.messageWrapper {
+  margin: 9.5% auto;
 }
 
 .title {
@@ -19,7 +14,8 @@
   padding-bottom: 20px;
 }
 
-.button {
-  padding: 10px 38px;
-  margin: 36px auto 0;
+.message {
+  color: var(--textLight);
+  font-size: 24px;
+  font-weight: 600;
 }

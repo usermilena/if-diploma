@@ -1,11 +1,12 @@
 import React from "react";
-import { Field, Form } from "react-final-form";
+import { Form } from "react-final-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { setUser } from "../../store/slices/auth.slice";
 import { Button } from "../Button";
 import { Calendar } from "../Calendar";
+import { FormInput } from "../FormInput";
 import { CloseIcon } from "../Icons";
 import styles from "./SignUpModal.module.css";
 
@@ -15,7 +16,7 @@ export const SignUpModal = ({ closeModal }) => {
 
   const onSubmit = async (values) => {
     dispatch(setUser(values));
-    navigate("/home");
+    navigate("home");
   };
 
   return (
@@ -24,37 +25,10 @@ export const SignUpModal = ({ closeModal }) => {
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit} className={styles.wrapper}>
           <h3 className={styles.title}>Welcome to Fox Library</h3>
-          <label className={styles.label}>Username</label>
-          <Field
-            name="username"
-            component="input"
-            type="text"
-            className={styles.input}
-            required
-          />
-          <label className={styles.label}>Your birthdate</label>
-          <Field
-            name="date"
-            component={Calendar}
-            className={styles.input}
-            required
-          />
-          <label className={styles.label}>Email</label>
-          <Field
-            name="email"
-            component="input"
-            type="email"
-            className={styles.input}
-            required
-          />
-          <label className={styles.label}>Password</label>
-          <Field
-            name="password"
-            component="input"
-            type="text"
-            className={styles.input}
-            required
-          />
+          <FormInput label="Username" name="username" />
+          <FormInput label="Your birthdate" component={Calendar} name="date" />
+          <FormInput label="Email" type="email" name="email" />
+          <FormInput label="Password" name="password" />
           <Button type="submit" fontSize={18} text="Sign up" />
           <CloseIcon className={styles.closeIcon} onClick={closeModal} />
         </form>

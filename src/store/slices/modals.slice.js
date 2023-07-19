@@ -10,8 +10,12 @@ const modalsSlice = createSlice({
       ...state,
       isSignUpOpen: action.payload,
     }),
+    setIsAccountModalOpen: (state, action) => ({
+      ...state,
+      IsAccountModalOpen: action.payload,
+    }),
   },
 });
 
-export const { setIsSignUpOpen } = modalsSlice.actions;
+export const { setIsSignUpOpen, setIsAccountModalOpen } = modalsSlice.actions;
 export const modalsReducer = modalsSlice.reducer;

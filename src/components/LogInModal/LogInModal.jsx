@@ -1,10 +1,11 @@
 import React from "react";
-import { Field, Form } from "react-final-form";
+import { Form } from "react-final-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { setUser } from "../../store/slices/auth.slice";
 import { Button } from "../Button";
+import { FormInput } from "../FormInput";
 import { CloseIcon } from "../Icons";
 import styles from "./LogInModal.module.css";
 
@@ -14,7 +15,7 @@ export const LogInModal = ({ closeModal }) => {
 
   const onSubmit = async (values) => {
     dispatch(setUser(values));
-    navigate("/home");
+    navigate("home");
   };
 
   return (
@@ -23,22 +24,8 @@ export const LogInModal = ({ closeModal }) => {
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit} className={styles.wrapper}>
           <h3 className={styles.title}>Log In to Fox Library</h3>
-          <label className={styles.label}>Username</label>
-          <Field
-            name="username"
-            component="input"
-            type="text"
-            className={styles.input}
-            required
-          />
-          <label className={styles.label}>Password</label>
-          <Field
-            name="password"
-            component="input"
-            type="text"
-            className={styles.input}
-            required
-          />
+          <FormInput label="Username" name="username" />
+          <FormInput label="Password" name="password" />
           <Button type="form" fontSize={18} text="Log In" />
           <CloseIcon className={styles.closeIcon} onClick={closeModal} />
         </form>

@@ -1,26 +1,32 @@
 import React from "react";
 
+import classNames from "classnames";
 import { array, string } from "prop-types";
 
 import { BookCard } from "../BookCard";
-import { Button } from "../Button";
 import styles from "./BooksList.module.css";
 
-export const BooksList = ({ data, title }) => {
+export const BooksList = ({ data, title, emptyDataMessage }) => {
   return (
-    <div className={styles.wrapper}>
+    <>
       <h3 className={styles.title}>{title}</h3>
-      <div className={styles.booksWrapper}>
-        {data.map((el) => (
-          <BookCard el={el} key={el.id} />
-        ))}
+      <div
+        className={classNames({
+          [styles.messageWrapper]: !data,
+          [styles.booksWrapper]: data,
+        })}
+      >
+        {data ? (
+          data.map((el) => <BookCard el={el} key={el.id} />)
+        ) : (
+          <p className={styles.message}>{emptyDataMessage}</p>
+        )}
       </div>
-      <Button className={styles.button} text="Show more" />
-    </div>
+    </>
   );
 };
 
 BooksList.propTypes = {
-  data: array.isRequired,
+  data: array,
   title: string.isRequired,
 };

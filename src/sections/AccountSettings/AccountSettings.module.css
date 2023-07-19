@@ -1,0 +1,22 @@
+.wrapper {
+  border-radius: 8px;
+  max-width: 394px;
+  max-height: 730px;
+  background-color: var(--bg);
+  margin: auto;
+  padding: 26px 37px 21px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.img {
+  width: 81px;
+  height: 81px;
+  margin: auto;
+}
