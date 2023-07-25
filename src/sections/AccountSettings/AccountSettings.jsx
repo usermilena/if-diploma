@@ -36,9 +36,8 @@ export const AccountSettings = () => {
             className={styles.img}
           />
           <Button
-            type="button"
-            fontSize={12}
             text="Change photo"
+            variant="contained"
             color="light"
             className={styles.buttonAvatar}
           />
@@ -82,8 +81,9 @@ export const AccountSettings = () => {
           <Button
             type="submit"
             text="Save"
-            fontSize={16}
             className={styles.buttonSave}
+            variant="contained"
+            color="primary"
           />
         </form>
       )}

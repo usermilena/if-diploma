@@ -12,9 +12,10 @@ export const BookPage = ({ book }) => {
       <span>
         {book.length}, released in {book.released}
       </span>
-      <Button text="Order" />
+      <Button text="Order" variant="contained" color="primary" />
       <h4>About book</h4>
       {book.description}
+      <Button text="Show more" variant="contained" color="light" />
     </div>
   );
 };

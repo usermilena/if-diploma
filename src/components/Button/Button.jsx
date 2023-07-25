@@ -7,23 +7,22 @@ import styles from "./Button.module.css";
 
 export const Button = ({
   text,
-  className,
-  fontSize = 20,
   type = "button",
   onClick,
-  color = "primary",
+  color,
+  variant = "text",
+  className,
 }) => {
   return (
     <button
       onClick={onClick}
       type={type}
       className={classNames(styles.button, className, {
-        [styles.fz12]: fontSize === 12,
-        [styles.fz16]: fontSize === 16,
-        [styles.fz18]: fontSize === 18,
-        [styles.fz20]: fontSize === 20,
+        [styles.contained]: variant === "contained",
+        [styles.outlined]: variant === "outlined",
         [styles.primary]: color === "primary",
         [styles.light]: color === "light",
+        [styles.secondary]: color === "secondary",
       })}
     >
       {text}
@@ -33,7 +32,8 @@ export const Button = ({
 
 Button.propTypes = {
   text: string.isRequired,
-  fontSize: oneOf([12, 16, 18, 20]),
   type: string,
   onClick: func,
+  color: oneOf(["primary", "light", "secondary"]),
+  variant: oneOf(["contained", "outlined", "text"]),
 };

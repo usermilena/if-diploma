@@ -6,6 +6,7 @@ import classNames from "classnames";
 import { ArrowIcon } from "../../components/Icons";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { AccountDropdown } from "../AccountDropdown";
+import { Button } from "../Button";
 import styles from "./Menu.module.css";
 
 export const Menu = () => {
@@ -25,26 +26,24 @@ export const Menu = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.buttonsWrapper}>
-        <button
+        <Button
           className={classNames(styles.item, {
             [styles.active]: location.pathname === "/all",
           })}
           onClick={() => {
             navigate("/all");
           }}
-        >
-          All books
-        </button>
-        <button
+          text="All books"
+        />
+        <Button
           className={classNames(styles.item, {
             [styles.active]: location.pathname === "/home",
           })}
           onClick={() => {
             navigate("/home");
           }}
-        >
-          Your orders
-        </button>
+          text="Your orders"
+        />
       </div>
       <div onClick={openAccountModal} className={styles.accountWrapper}>
         <img

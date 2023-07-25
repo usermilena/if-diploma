@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 
 import { setIsSignUpOpen } from "../../store/slices/modals.slice";
+import { Button } from "../Button";
 import { LogInModal } from "../LogInModal";
 import { SignUpModal } from "../SignUpModal";
 import styles from "./MenuAuth.module.css";
@@ -49,14 +50,13 @@ export const MenuAuth = () => {
 
   return (
     <div className={styles.wrapper}>
-      <button
+      <Button
         onClick={openLogIn}
         className={classNames(styles.item, {
           [styles.active]: logInIsOpen,
         })}
-      >
-        Log in
-      </button>
+        text="Log in"
+      />
       <Modal
         isOpen={logInIsOpen}
         onRequestClose={closeLogIn}
@@ -65,14 +65,13 @@ export const MenuAuth = () => {
       >
         <LogInModal closeModal={closeLogIn} />
       </Modal>
-      <button
+      <Button
         onClick={openSignUp}
         className={classNames(styles.item, {
           [styles.active]: isSignUpOpen,
         })}
-      >
-        Sign up
-      </button>
+        text="Sign up"
+      />
       <Modal
         isOpen={isSignUpOpen}
         onRequestClose={closeSignUp}

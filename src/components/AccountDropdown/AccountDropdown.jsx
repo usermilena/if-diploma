@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { setUser } from "../../store/slices/auth.slice";
+import { Button } from "../Button";
 import styles from "./AccountDropdown.module.css";
 
 export const AccountDropdown = forwardRef((props, ref) => {
@@ -13,33 +14,27 @@ export const AccountDropdown = forwardRef((props, ref) => {
   return (
     <div className={styles.wrapper}>
       <span className={styles.title}>{username}</span>
-      <button
-        type="button"
+      <Button
         onClick={() => {
           navigate("settings");
         }}
         className={styles.button}
-      >
-        Settings
-      </button>
-      <button
-        type="button"
+        text="Settings"
+      />
+      <Button
         onClick={() => {
           navigate("home");
         }}
         className={styles.button}
-      >
-        My orders
-      </button>
-      <button
-        type="button"
+        text="My orders"
+      />
+      <Button
         onClick={() => {
           dispatch(setUser(null));
         }}
         className={`${styles.button} ${styles.buttonLogOut}`}
-      >
-        Log out
-      </button>
+        text="Log out"
+      />
     </div>
   );
 });

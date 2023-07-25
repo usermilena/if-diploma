@@ -29,7 +29,12 @@ export const SignUpModal = ({ closeModal }) => {
           <FormInput label="Your birthdate" component={Calendar} name="date" />
           <FormInput label="Email" type="email" name="email" />
           <FormInput label="Password" name="password" />
-          <Button type="submit" fontSize={18} text="Sign up" />
+          <Button
+            type="submit"
+            text="Sign up"
+            variant="contained"
+            color="primary"
+          />
           <CloseIcon className={styles.closeIcon} onClick={closeModal} />
         </form>
       )}

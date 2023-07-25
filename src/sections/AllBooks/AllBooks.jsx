@@ -22,7 +22,12 @@ export const AllBooks = () => {
   return (
     <BooksWrapper>
       <BooksList data={books.slice(0, 4)} title="All books" />
-      <Button className={styles.button} text="Show more" />
+      <Button
+        className={styles.button}
+        text="Show more"
+        variant="contained"
+        color="primary"
+      />
     </BooksWrapper>
   );
 };

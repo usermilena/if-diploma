@@ -43,6 +43,8 @@ export const IntroPage = () => {
             onClick={openSignUp}
             text="Let’s start"
             className={styles.button}
+            variant="contained"
+            color="primary"
           />
           <Modal
             isOpen={isSignUpOpen}

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import { Button } from "../../components/Button";
 import { FacebookLogo, InstagramLogo } from "../../components/Icons";
 import styles from "./Footer.module.css";
 
@@ -12,75 +13,61 @@ export const Footer = () => {
       <div className={styles.sectionsWrapper}>
         <div className={styles.columnWrapper}>
           <h4 className={styles.title}>About Fox Library</h4>
-          <button
-            type="button"
+          <Button
             onClick={() => {
               navigate("about-us");
             }}
             className={styles.text}
-          >
-            About us
-          </button>
-          <button
-            type="button"
+            text="About us"
+          />
+          <Button
             onClick={() => {
               navigate("privacy-and-security");
             }}
             className={styles.text}
-          >
-            Privacy&Security
-          </button>
-          <button
-            type="button"
+            text="Privacy&Security"
+          />
+          <Button
             onClick={() => {
               navigate("contact-us");
             }}
             className={styles.text}
-          >
-            Contact us
-          </button>
+            text="Contact us"
+          />
         </div>
         <div className={styles.columnWrapper}>
           <h4 className={styles.title}>Help</h4>
-          <button
+          <Button
             onClick={() => {
               navigate("help-center");
             }}
-            type="button"
             className={styles.text}
-          >
-            Help center
-          </button>
-          <button
+            text="Help center"
+          />
+          <Button
             onClick={() => {
               navigate("FAQs");
             }}
-            type="button"
             className={styles.text}
-          >
-            FAQs
-          </button>
+            text="FAQs"
+          />
         </div>
         <div className={styles.columnWrapper}>
           <h4 className={styles.title}>My account</h4>
-          <button
+          <Button
             onClick={() => {
               navigate("settings");
             }}
-            type="button"
             className={styles.text}
-          >
-            Edit profile
-          </button>
-          <button
+            text="Edit profile"
+          />
+          <Button
             onClick={() => {
               navigate("home");
             }}
-            type="button"
             className={styles.text}
-          >
-            My orders
-          </button>
+            text="My orders"
+          />
         </div>
       </div>
       <div className={styles.columnWrapper}>

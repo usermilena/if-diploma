@@ -9,12 +9,12 @@ export const BookCard = ({ el }) => {
     <Link className={styles.wrapper}>
       <img className={styles.image} src={el.imageUrl} alt="Book cover" />
       <div className={styles.descriptionWrapper}>
-        <span>Status</span>
+        <Button text="*Lorem" variant="outlined" color="primary" />
         <span>*Bookholder</span>
         <span>{el.name}</span>
         <span>by {el.author}</span>
         <span>Rating</span>
-        <Button fontSize={12} text="Order" />
+        <Button text="Order" color="light" variant="contained" />
       </div>
     </Link>
   );

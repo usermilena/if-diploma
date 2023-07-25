@@ -26,7 +26,12 @@ export const LogInModal = ({ closeModal }) => {
           <h3 className={styles.title}>Log In to Fox Library</h3>
           <FormInput label="Username" name="username" />
           <FormInput label="Password" name="password" />
-          <Button type="form" fontSize={18} text="Log In" />
+          <Button
+            type="form"
+            text="Log In"
+            variant="contained"
+            color="primary"
+          />
           <CloseIcon className={styles.closeIcon} onClick={closeModal} />
         </form>
       )}
