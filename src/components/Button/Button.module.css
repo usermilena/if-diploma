@@ -1,11 +1,18 @@
 .button {
   border-radius: 8px;
-  background-color: var(--primary);
   color: var(--textAccent);
   font-size: 20px;
   font-weight: 600;
   padding: 10px 45px;
   cursor: pointer;
+}
+
+.primary {
+  background-color: var(--primary);
+}
+
+.light {
+  background-color: var(--textLight);
 }
 
 .fz12 {

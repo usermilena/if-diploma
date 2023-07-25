@@ -1,11 +1,10 @@
 import React from "react";
 import { Field } from "react-final-form";
 
+import classNames from "classnames";
 import { string } from "prop-types";
 
 import styles from "./FormInput.module.css";
-
-// const required = (value) => (value ? undefined : "Required");
 
 export const FormInput = ({
   label,
@@ -13,17 +12,19 @@ export const FormInput = ({
   component = "input",
   name,
   value,
+  required = true,
+  className,
 }) => {
   return (
     <>
-      <label className={styles.label}>{label}</label>
+      <label className={classNames(className, styles.label)}>{label}</label>
       <Field
         name={name}
         component={component}
         type={type}
         className={styles.input}
         initialValue={value}
-        required
+        required={required}
       />
     </>
   );

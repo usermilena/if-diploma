@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { setUser } from "../../store/slices/auth.slice";
-import styles from "./AccountModal.module.css";
+import styles from "./AccountDropdown.module.css";
 
-export const AccountModal = forwardRef((props, ref) => {
+export const AccountDropdown = forwardRef((props, ref) => {
   const username = useSelector((state) => state.auth.user.username);
   const navigate = useNavigate();
   const dispatch = useDispatch();

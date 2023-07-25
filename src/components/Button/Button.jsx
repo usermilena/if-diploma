@@ -11,6 +11,7 @@ export const Button = ({
   fontSize = 20,
   type = "button",
   onClick,
+  color = "primary",
 }) => {
   return (
     <button
@@ -21,6 +22,8 @@ export const Button = ({
         [styles.fz16]: fontSize === 16,
         [styles.fz18]: fontSize === 18,
         [styles.fz20]: fontSize === 20,
+        [styles.primary]: color === "primary",
+        [styles.light]: color === "light",
       })}
     >
       {text}

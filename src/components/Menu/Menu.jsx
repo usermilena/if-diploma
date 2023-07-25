@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 import { ArrowIcon } from "../../components/Icons";
 import { useClickOutside } from "../../hooks/useClickOutside";
-import { AccountModal } from "../AccountModal";
+import { AccountDropdown } from "../AccountDropdown";
 import styles from "./Menu.module.css";
 
 export const Menu = () => {
@@ -55,7 +55,7 @@ export const Menu = () => {
         <ArrowIcon
           className={classNames({ [styles.rotateArrow]: isAccountModalOpen })}
         />
-        {isAccountModalOpen && <AccountModal />}
+        {isAccountModalOpen && <AccountDropdown />}
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useSelector } from "react-redux";
 
-import { format, isValid } from "date-fns";
+import { isValid } from "date-fns";
 
 import "./Calendar.css";
 
@@ -14,8 +15,22 @@ const range = (start, end) => {
   return ans;
 };
 
-export const Calendar = ({ name, input, className }) => {
-  const [startDate, setStartDate] = useState(null);
+export const CalendarForSettings = ({ className, input }) => {
+  const date = useSelector((state) =>
+    state.auth.user ? state.auth.user.date : null
+  );
+
+  return (
+    <Calendar
+      initialValue={new Date(date)}
+      className={className}
+      input={input}
+    />
+  );
+};
+
+export const Calendar = ({ name, input, className, initialValue = null }) => {
+  const [startDate, setStartDate] = useState(initialValue);
   const years = range(new Date().getFullYear() - 120, new Date().getFullYear());
 
   const months = [
@@ -90,7 +105,7 @@ export const Calendar = ({ name, input, className }) => {
       selected={startDate}
       onChange={(date) => {
         if (isValid(date)) {
-          input.onChange(format(new Date(date), "dd-MM-yyyy"));
+          input.onChange(date);
           setStartDate(date);
         } else {
           input.onChange(null);
