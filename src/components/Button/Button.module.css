@@ -1,4 +1,4 @@
-.button {
+button {
   cursor: pointer;
 }
 
@@ -8,13 +8,13 @@
   color: var(--textAccent);
 }
 
-.contained.primary {
+.primary {
   background-color: var(--primary);
   width: 185px;
   padding: 10px 0;
 }
 
-.contained.light {
+.light {
   background-color: var(--textLight);
   width: 122px;
   padding: 7px 0;
@@ -31,10 +31,19 @@
   font-size: 12px;
 }
 
-.outlined.primary {
+.taken {
   border: 2px solid var(--primary);
 }
 
-.outlined.secondary {
+.available {
   border: 2px solid var(--secondary);
+}
+
+.waiting {
+  border: 2px solid #ffe96d;
+}
+
+.disabled {
+  cursor: default;
+  background-color: var(--textLight);
 }

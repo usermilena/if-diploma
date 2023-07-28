@@ -1,12 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 import { Button } from "../../components/Button";
 
-export const BookPage = ({ book }) => {
+export const BookPage = () => {
+  let { bookId } = useParams({});
+  const books = useSelector((state) => state.books.all);
+  const book = books.filter((el) => el.id === bookId)[0];
+
   return (
     <div>
       <img src="" alt="" />
-      <span>*Rating</span>
+      <span>{book.rating}</span>
       <h3>{book.name}</h3>
       <h5>{book.author}</h5>
       <span>

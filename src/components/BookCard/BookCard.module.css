@@ -18,3 +18,30 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.bookholder {
+  color: var(--text);
+  font-size: 10px;
+}
+
+.title {
+  color: var(--textDark);
+  font-size: 14px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 122px;
+}
+
+.author {
+  color: var(--text);
+  font-size: 12px;
+}
+
+.button {
+  width: 122px;
+  padding: 7px 0;
+  font-size: 12px;
+  font-weight: 600;
+}

@@ -76,12 +76,14 @@ export const Footer = () => {
           <a
             href="https://www.instagram.com/fox.library/"
             className={styles.text}
+            target="_blank"
           >
             <InstagramLogo />
           </a>
           <a
             href="https://www.facebook.com/FoxLibraryKISD/"
             className={styles.text}
+            target="_blank"
           >
             <FacebookLogo />
           </a>

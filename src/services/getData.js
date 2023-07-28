@@ -1,11 +1,18 @@
-import axios from "axios";
+import { useSelector } from "react-redux";
 
-export const getData = async (url, query) => {
-  const { data: data } = await axios.get(url, {
-    params: {
-      search: query,
-    },
-  });
+import { getRandomStatusAndBookholder } from "../random/getRandomStatus";
 
-  return data;
+export const useData = async (url) => {
+  const dataFromRedux = useSelector((state) => state.books.all);
+
+  if (dataFromRedux.length < 1) {
+    const response = await fetch(url);
+    const data = await response.json();
+    const dataWithRandomStatusAndBookholder =
+      getRandomStatusAndBookholder(data);
+
+    return dataWithRandomStatusAndBookholder;
+  }
+
+  return dataFromRedux;
 };

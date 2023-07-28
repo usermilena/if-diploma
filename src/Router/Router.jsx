@@ -13,6 +13,7 @@ import {
 import { IntroPage } from "../pages/IntroPage";
 import { AccountSettings } from "../sections/AccountSettings";
 import { AllBooks } from "../sections/AllBooks";
+import { BookPage } from "../sections/BookPage";
 
 export const Router = () => {
   return (
@@ -20,7 +21,9 @@ export const Router = () => {
       <Route element={<ProtectedLayout />}>
         <Route path="/" element={<IntroPage />} />
         <Route path="home" element={<Home />} />
+        {/* <Route path="/home/:bookId" element={<BookPage />} /> */}
         <Route path="all" element={<AllBooks />} />
+        {/* <Route path="/all/:bookId" element={<BookPage />} /> */}
         <Route path="about-us" element={<AboutUs />} />
         <Route path="privacy-and-security" element={<PrivacySecurity />} />
         <Route path="contact-us" element={<ContactUs />} />

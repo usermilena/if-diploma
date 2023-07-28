@@ -1,23 +1,23 @@
 import React from "react";
 
 import classNames from "classnames";
-import { array, string } from "prop-types";
+import { array, func, string } from "prop-types";
 
 import { BookCard } from "../BookCard";
 import styles from "./BooksList.module.css";
 
-export const BooksList = ({ data, title, emptyDataMessage }) => {
+export const BooksList = ({ data, title, emptyDataMessage, renderItem }) => {
   return (
     <>
       <h3 className={styles.title}>{title}</h3>
       <div
         className={classNames({
-          [styles.messageWrapper]: !data,
-          [styles.booksWrapper]: data,
+          [styles.messageWrapper]: data.length < 1,
+          [styles.booksWrapper]: data.length >= 1,
         })}
       >
-        {data ? (
-          data.map((el) => <BookCard el={el} key={el.id} />)
+        {data?.length >= 1 ? (
+          data.map(renderItem)
         ) : (
           <p className={styles.message}>{emptyDataMessage}</p>
         )}
@@ -29,4 +29,6 @@ export const BooksList = ({ data, title, emptyDataMessage }) => {
 BooksList.propTypes = {
   data: array,
   title: string.isRequired,
+  renderItem: func.isRequired,
+  emptyDataMessage: string,
 };

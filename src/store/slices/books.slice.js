@@ -7,13 +7,44 @@ const booksSlice = createSlice({
   initialState: INITIAL_STATE.books,
   reducers: {
     setAllBooks: (state, action) => ({ ...state, all: action.payload }),
-    setMyBooks: (state, action) => ({ ...state, my: action.payload }),
-    setMyWaitingBooks: (state, action) => ({
+    setBookStatusToMy: (state, action) => ({
       ...state,
-      myWaiting: action.payload,
+      all: state.all.map((book) =>
+        book.id === action.payload.id
+          ? { ...book, status: "Taken", bookholder: "Milena" }
+          : book
+      ),
+    }),
+    setBookStatusToWaiting: (state, action) => ({
+      ...state,
+      all: state.all.map((book) =>
+        book.id === action.payload.id
+          ? { ...book, status: "Waiting for" }
+          : book
+      ),
+    }),
+    setBookStatusToAvailable: (state, action) => ({
+      ...state,
+      all: state.all.map((book) =>
+        book.id === action.payload.id
+          ? { ...book, status: "Available", bookholder: "" }
+          : book
+      ),
+    }),
+    setBookStatusToTaken: (state, action) => ({
+      ...state,
+      all: state.all.map((book) =>
+        book.id === action.payload.id ? { ...book, status: "Taken" } : book
+      ),
     }),
   },
 });
 
-export const { setAllBooks } = booksSlice.actions;
+export const {
+  setAllBooks,
+  setBookStatusToMy,
+  setBookStatusToWaiting,
+  setBookStatusToAvailable,
+  setBookStatusToTaken,
+} = booksSlice.actions;
 export const booksReducer = booksSlice.reducer;
