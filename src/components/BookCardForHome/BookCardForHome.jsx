@@ -7,6 +7,7 @@ import {
   setBookStatusToTaken,
 } from "../../store/slices/books.slice";
 import { Button } from "../Button";
+import { StarRating } from "../Icons";
 import styles from "./BookCardForHome.module.css";
 
 export const BookCardForHome = ({ el }) => {
@@ -28,7 +29,7 @@ export const BookCardForHome = ({ el }) => {
       <span className={styles.title}>
         {el.name} by {el.author}
       </span>
-      <span>{el.rating}</span>
+      <StarRating rating={el.rating} />
       <Button
         text="Return"
         variant="contained"

@@ -9,6 +9,7 @@ import {
   setBookStatusToWaiting,
 } from "../../store/slices/books.slice";
 import { Button } from "../Button";
+import { StarRating } from "../Icons/Icons";
 import styles from "./BookCard.module.css";
 
 export const BookCard = ({ el }) => {
@@ -46,7 +47,7 @@ export const BookCard = ({ el }) => {
         )}
         <span className={styles.title}>{el.name}</span>
         <span className={styles.author}>by {el.author}</span>
-        <span>{el.rating}</span>
+        <StarRating rating={el.rating} />
         <Button
           text={
             (el.status === "Taken" && el.bookholder === "Milena") ||

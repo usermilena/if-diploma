@@ -1,0 +1,5 @@
+.starsWrapper {
+  display: flex;
+  min-width: 122px;
+  justify-content: space-between;
+}
