@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  width: 417px;
-  height: 369px;
   padding: 40px 32px;
   position: relative;
 }
@@ -12,6 +10,20 @@
   font-size: 24px;
   font-weight: 700;
   padding-bottom: 32px;
+}
+
+.errorInput {
+  border-color: red;
+}
+
+.errorMessage {
+  color: red;
+  max-width: 310px;
+  padding-bottom: 12px;
+}
+
+.button {
+  width: 100%;
 }
 
 .closeIcon {

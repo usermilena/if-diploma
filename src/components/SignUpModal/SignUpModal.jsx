@@ -11,12 +11,26 @@ import { CloseIcon } from "../Icons";
 import styles from "./SignUpModal.module.css";
 
 export const SignUpModal = ({ closeModal }) => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onSubmit = async (values) => {
-    dispatch(setUser(values));
+    let arr = [];
+    const users = localStorage.getItem("users");
+    const parsedUsers = JSON.parse(users);
+
+    if (!parsedUsers) {
+      arr.push(values);
+      localStorage.setItem("users", JSON.stringify(arr));
+    }
+
+    if (parsedUsers) {
+      parsedUsers.push(values);
+      localStorage.setItem("users", JSON.stringify(parsedUsers));
+    }
+
     navigate("home");
+    dispatch(setUser(values));
   };
 
   return (
