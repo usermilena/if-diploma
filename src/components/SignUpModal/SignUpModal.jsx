@@ -44,6 +44,7 @@ export const SignUpModal = ({ closeModal }) => {
           <FormInput label="Email" type="email" name="email" />
           <FormInput label="Password" name="password" />
           <Button
+            className={styles.button}
             type="submit"
             text="Sign up"
             variant="contained"
