@@ -3,7 +3,6 @@ import React from "react";
 import classNames from "classnames";
 import { array, func, string } from "prop-types";
 
-import { BookCard } from "../BookCard";
 import styles from "./BooksList.module.css";
 
 export const BooksList = ({ data, title, emptyDataMessage, renderItem }) => {

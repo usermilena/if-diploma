@@ -20,10 +20,9 @@ export const Router = () => {
     <Routes>
       <Route element={<ProtectedLayout />}>
         <Route path="/" element={<IntroPage />} />
+        <Route path="/:bookId" element={<BookPage />} />
         <Route path="home" element={<Home />} />
-        {/* <Route path="/home/:bookId" element={<BookPage />} /> */}
         <Route path="all" element={<AllBooks />} />
-        {/* <Route path="/all/:bookId" element={<BookPage />} /> */}
         <Route path="about-us" element={<AboutUs />} />
         <Route path="privacy-and-security" element={<PrivacySecurity />} />
         <Route path="contact-us" element={<ContactUs />} />

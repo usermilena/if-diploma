@@ -5,6 +5,7 @@
   align-items: center;
   padding: 13px;
   min-width: 500px;
+  position: relative;
 }
 
 .wrapper:focus-within {

@@ -1,5 +1,6 @@
 .starsWrapper {
   display: flex;
   min-width: 122px;
+  max-width: 160px;
   justify-content: space-between;
 }

@@ -34,8 +34,10 @@ export const BookCard = ({ el }) => {
   };
 
   return (
-    <Link className={styles.wrapper}>
-      <img className={styles.image} src={el.imageUrl} alt="Book cover" />
+    <div className={styles.wrapper}>
+      <Link to={`/${el.id}`}>
+        <img className={styles.image} src={el.imageUrl} alt="Book cover" />
+      </Link>
       <div className={styles.descriptionWrapper}>
         <Button
           text={el.status}
@@ -66,6 +68,6 @@ export const BookCard = ({ el }) => {
           className={styles.button}
         />
       </div>
-    </Link>
+    </div>
   );
 };

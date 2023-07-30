@@ -1,6 +1,7 @@
 import React from "react";
 
-import { number } from "prop-types";
+import classNames from "classnames";
+import { number, string } from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 
 import styles from "./Icons.module.css";
@@ -104,13 +105,24 @@ export const FacebookLogo = ({ className }) => {
   );
 };
 
-export const StarRating = ({ rating }) => {
+export const StarRating = ({
+  rating,
+  className,
+  width = "15",
+  height = "14",
+}) => {
   return (
-    <div className={styles.starsWrapper}>
+    <div className={classNames(className, styles.starsWrapper)}>
       {Array(5)
         .fill(1)
         .map((el, index) => (
-          <StarIcon index={index + 1} rating={rating} key={uuidv4()} />
+          <StarIcon
+            index={index + 1}
+            rating={rating}
+            key={uuidv4()}
+            width={width}
+            height={height}
+          />
         ))}
     </div>
   );
@@ -120,9 +132,9 @@ StarRating.propTypes = {
   rating: number.isRequired,
 };
 
-export const StarIcon = ({ rating, index }) => {
+export const StarIcon = ({ rating, index, width, height }) => {
   return (
-    <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+    <svg width={width} height={height} viewBox="0 0 15 14" fill="none">
       <path
         d="M6.91607 1.08156C7.06575 0.620905 7.71745 0.620901 7.86713 1.08156L8.82444 4.02786C9.02525 4.6459 9.60119 5.06434 10.251 5.06434H13.349C13.8333 5.06434 14.0347 5.68414 13.6428 5.96885L11.1366 7.78976C10.6108 8.17173 10.3909 8.84878 10.5917 9.46681L11.549 12.4131C11.6987 12.8738 11.1714 13.2568 10.7796 12.9721L8.27328 11.1512C7.74755 10.7693 7.03565 10.7693 6.50992 11.1512L4.00364 12.9721C3.61179 13.2568 3.08455 12.8738 3.23423 12.4131L4.19154 9.46681C4.39235 8.84878 4.17236 8.17173 3.64663 7.78976L1.14035 5.96885C0.748499 5.68415 0.949883 5.06434 1.43425 5.06434H4.53218C5.18202 5.06434 5.75795 4.6459 5.95876 4.02786L6.91607 1.08156Z"
         fill={rating >= index ? "black" : "white"}
@@ -135,4 +147,6 @@ export const StarIcon = ({ rating, index }) => {
 StarIcon.propTypes = {
   rating: number.isRequired,
   index: number.isRequired,
+  width: string.isRequired,
+  height: string.isRequired,
 };
