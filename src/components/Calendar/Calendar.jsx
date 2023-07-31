@@ -114,6 +114,7 @@ export const Calendar = ({ name, input, className, initialValue = null }) => {
       maxDate={new Date()}
       className={className}
       name={name}
+      required
     />
   );
 };
