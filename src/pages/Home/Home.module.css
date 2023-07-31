@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.booksWrapper {
+  min-height: 401px;
+}

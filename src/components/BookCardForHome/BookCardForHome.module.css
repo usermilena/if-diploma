@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  justify-content: space-between;
+}
+
+.image {
+  width: 122px;
+  height: 185px;
+  border-radius: 8px;
+  border: 1px solid var(--textLight);
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 122px;
+  max-height: 48px;
+  font-size: 12px;
+}

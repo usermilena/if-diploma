@@ -1,6 +1,12 @@
 import React from "react";
 
-export const LogoIcon = ({ className }) => {
+import classNames from "classnames";
+import { number, string } from "prop-types";
+import { v4 as uuidv4 } from "uuid";
+
+import styles from "./Icons.module.css";
+
+export const LogoIcon = ({ className, onClick }) => {
   return (
     <svg
       width="172"
@@ -8,6 +14,7 @@ export const LogoIcon = ({ className }) => {
       viewBox="0 0 172 32"
       fill="var(--primary)"
       className={className}
+      onClick={onClick}
     >
       <path d="M13.4049 16.2645H5.97964V24.7603H0V2.31405H14.4891L15.0477 7.04132H5.97964V11.5372H12.8464L13.4049 16.2645Z" />
       <path d="M16.3647 16.6612C16.3647 13.9725 17.2408 11.8898 18.9931 10.4132C20.7673 8.9146 22.9029 8.16529 25.3999 8.16529C28.0283 8.16529 30.1858 8.89256 31.8724 10.3471C33.5808 11.8017 34.4351 13.9614 34.4351 16.8264C34.4351 19.5152 33.548 21.5758 31.7738 23.0083C29.9996 24.4187 27.8312 25.124 25.2685 25.124C22.7058 25.124 20.5811 24.4298 18.8946 23.0413C17.208 21.6529 16.3647 19.5262 16.3647 16.6612ZM22.5415 16.6612C22.5415 17.741 22.7824 18.6116 23.2643 19.2727C23.7462 19.9118 24.4361 20.2314 25.3342 20.2314C26.276 20.2314 26.9988 19.9449 27.5026 19.3719C28.0064 18.7989 28.2583 17.9504 28.2583 16.8264C28.2583 15.7466 28.0173 14.854 27.5355 14.1488C27.0536 13.4215 26.3636 13.0579 25.4656 13.0579C24.5237 13.0579 23.8009 13.3774 23.2972 14.0165C22.7934 14.6556 22.5415 15.5372 22.5415 16.6612Z" />
@@ -37,7 +44,7 @@ export const SearchIcon = ({ className }) => {
   );
 };
 
-export const CloseIcon = ({ className }) => {
+export const CloseIcon = ({ className, onClick }) => {
   return (
     <svg
       width="16"
@@ -45,6 +52,7 @@ export const CloseIcon = ({ className }) => {
       viewBox="0 0 16 17"
       fill="var(--textLight)"
       className={className}
+      onClick={onClick}
     >
       <path d="M16 2.5805L14.3886 0.971375L8 7.3508L1.61143 0.971375L0 2.5805L6.38857 8.95992L0 15.3393L1.61143 16.9485L8 10.569L14.3886 16.9485L16 15.3393L9.61143 8.95992L16 2.5805Z" />
     </svg>
@@ -89,10 +97,56 @@ export const FacebookLogo = ({ className }) => {
       className={className}
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M21.125 0H4.875C2.18263 0 0 2.18263 0 4.875V21.125C0 23.8174 2.18263 26 4.875 26H21.125C23.8174 26 26 23.8174 26 21.125V4.875C26 2.18263 23.8174 0 21.125 0ZM20.4647 14.0024H18.0324V23.0066H13.9682V14.0024H12.3911V10.9679H13.9682V9.035C13.9682 6.50342 15.0218 4.99816 18.005 4.99816H21.0292V8.01895H19.2708C18.1076 8.01895 18.0324 8.45342 18.0324 9.26079L18.0289 10.9645H20.7932L20.4613 13.9989L20.4647 14.0024Z"
       />
     </svg>
   );
+};
+
+export const StarRating = ({
+  rating,
+  className,
+  width = "15",
+  height = "14",
+}) => {
+  return (
+    <div className={classNames(className, styles.starsWrapper)}>
+      {Array(5)
+        .fill(1)
+        .map((el, index) => (
+          <StarIcon
+            index={index + 1}
+            rating={rating}
+            key={uuidv4()}
+            width={width}
+            height={height}
+          />
+        ))}
+    </div>
+  );
+};
+
+StarRating.propTypes = {
+  rating: number.isRequired,
+};
+
+export const StarIcon = ({ rating, index, width, height }) => {
+  return (
+    <svg width={width} height={height} viewBox="0 0 15 14" fill="none">
+      <path
+        d="M6.91607 1.08156C7.06575 0.620905 7.71745 0.620901 7.86713 1.08156L8.82444 4.02786C9.02525 4.6459 9.60119 5.06434 10.251 5.06434H13.349C13.8333 5.06434 14.0347 5.68414 13.6428 5.96885L11.1366 7.78976C10.6108 8.17173 10.3909 8.84878 10.5917 9.46681L11.549 12.4131C11.6987 12.8738 11.1714 13.2568 10.7796 12.9721L8.27328 11.1512C7.74755 10.7693 7.03565 10.7693 6.50992 11.1512L4.00364 12.9721C3.61179 13.2568 3.08455 12.8738 3.23423 12.4131L4.19154 9.46681C4.39235 8.84878 4.17236 8.17173 3.64663 7.78976L1.14035 5.96885C0.748499 5.68415 0.949883 5.06434 1.43425 5.06434H4.53218C5.18202 5.06434 5.75795 4.6459 5.95876 4.02786L6.91607 1.08156Z"
+        fill={rating >= index ? "black" : "white"}
+        stroke="black"
+      />
+    </svg>
+  );
+};
+
+StarIcon.propTypes = {
+  rating: number.isRequired,
+  index: number.isRequired,
+  width: string.isRequired,
+  height: string.isRequired,
 };

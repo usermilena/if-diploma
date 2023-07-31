@@ -1,0 +1,68 @@
+.wrapper {
+  display: flex;
+  background-color: var(--bg);
+  padding: 32px 76px 26px 32px;
+  border-radius: 16px;
+  gap: 32px;
+}
+
+.image {
+  width: 300px;
+  height: 454.286px;
+  border-radius: 8px;
+  border: 1px solid var(--textLight);
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  padding-bottom: 24px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  padding-bottom: 12px;
+}
+
+.author {
+  color: var(--primary);
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 24px;
+}
+
+.subtitle {
+  color: var(--text);
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.orderButton {
+  margin-bottom: 58px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 0;
+  width: 185px;
+}
+
+.aboutTitle {
+  font-size: 28px;
+  font-weight: 700;
+  padding-bottom: 12px;
+}
+
+.bookCaption {
+  font-size: 16px;
+  text-wrap: wrap;
+}
+
+.bookCaptionHidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 16px;
+  height: 176px;
+}

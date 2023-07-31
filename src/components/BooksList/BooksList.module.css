@@ -1,0 +1,21 @@
+.booksWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 44px;
+}
+
+.messageWrapper {
+  margin: 9.5% auto;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.message {
+  color: var(--textLight);
+  font-size: 24px;
+  font-weight: 600;
+}

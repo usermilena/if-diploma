@@ -2,7 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 30px;
+  padding-bottom: 80px;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  gap: 96px;
 }
 
 .logo {

@@ -1,0 +1,24 @@
+.mainWrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondaryLight);
+  border-radius: 8px;
+  padding: 68px 80px;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.title {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.text {
+  font-size: 28px;
+  font-weight: 600;
+  max-width: 314px;
+}

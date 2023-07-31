@@ -1,21 +1,66 @@
 @import url("./fonts.css");
-@import url("./reset.css");
-
-body {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  color: var(--textDark);
-  line-height: 1.36em;
-  min-width: 320px;
-  box-sizing: border-box;
-}
 
 :root {
   --primary: #ff5d4f;
   --secondary: #85c8ee;
   --secondaryLight: #d3ebf9;
-  --bg: #ffffff;
-  --textDark: #000000;
+  --bg: #fff;
+  --bgDark: #fafafa;
+  --textDark: #000;
   --text: #616161;
   --textLight: #b5b5b5;
+  --textAccent: #fff;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: var(--textDark);
+  line-height: 1.36em;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+body {
+  min-width: 320px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input + label {
+  display: inline-block;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: transparent;
+  border: none;
 }

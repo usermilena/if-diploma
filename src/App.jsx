@@ -1,17 +1,17 @@
 import React from "react";
+import { Provider } from "react-redux";
 
-// import { Provider } from "react-redux";
-// import { PersistGate } from "redux-persist/integration/react";
-import { Router } from "./Router";
+import { PersistGate } from "redux-persist/integration/react";
 
-// import { persistor, store } from "./store";
+import { Router } from "./router";
+import { persistor, store } from "./store";
 
 export const App = () => (
   <>
-    {/* <Provider store={store}> */}
-    {/* <PersistGate persistor={persistor}> */}
-    <Router />
-    {/* </PersistGate> */}
-    {/* </Provider> */}
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Router />
+      </PersistGate>
+    </Provider>
   </>
 );

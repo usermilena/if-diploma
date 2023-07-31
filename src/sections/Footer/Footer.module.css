@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondaryLight);
+  padding: 40px 105px;
+}
+
+.sectionsWrapper {
+  display: flex;
+  gap: 24px;
+}
+
+.columnWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 8px;
+  min-width: 185px;
+}
+
+.text {
+  font-size: 16px;
+  text-align: start;
+}
+
+.mediasWrapper {
+  display: flex;
+  gap: 16px;
+  padding-top: 7px;
+}

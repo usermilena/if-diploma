@@ -3,13 +3,17 @@
   gap: 48px;
 }
 
+.buttonsWrapper {
+  display: flex;
+  gap: 32px;
+}
+
 .item {
   color: var(--text);
   font-size: 20px;
   font-weight: 700;
-  cursor: pointer;
 }
 
-.item:focus {
+.active {
   color: var(--primary);
 }

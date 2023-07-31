@@ -1,0 +1,44 @@
+.accountWrapper {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  cursor: pointer;
+  position: relative;
+}
+
+.rotateArrow {
+  transform: rotate(180deg);
+}
+
+.wrapper {
+  position: absolute;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.25);
+  width: 169px;
+  height: 200px;
+  top: 55px;
+  right: -16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--bg);
+  padding: 20px 20px 13px;
+  cursor: default;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.button {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.buttonLogOut {
+  color: var(--primary);
+  margin: 0 auto;
+}

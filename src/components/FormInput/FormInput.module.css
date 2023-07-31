@@ -1,0 +1,18 @@
+.label {
+  font-size: 16px;
+  padding-bottom: 4px;
+  color: var(--text);
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid var(--textLight);
+  font-size: 18px;
+  padding: 9.5px 16px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: var(--primary);
+}
