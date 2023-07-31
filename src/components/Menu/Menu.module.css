@@ -8,14 +8,6 @@
   gap: 32px;
 }
 
-.accountWrapper {
-  display: flex;
-  align-items: center;
-  gap: 17px;
-  cursor: pointer;
-  position: relative;
-}
-
 .item {
   color: var(--text);
   font-size: 20px;
@@ -24,8 +16,4 @@
 
 .active {
   color: var(--primary);
-}
-
-.rotateArrow {
-  transform: rotate(180deg);
 }

@@ -1,3 +1,15 @@
+.accountWrapper {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  cursor: pointer;
+  position: relative;
+}
+
+.rotateArrow {
+  transform: rotate(180deg);
+}
+
 .wrapper {
   position: absolute;
   border-radius: 8px;
@@ -24,12 +36,6 @@
   color: var(--text);
   font-size: 16px;
   font-weight: 600;
-}
-
-.buttonSettings {
-  border-bottom: 1px solid var(--textLight);
-  width: 100%;
-  text-align: start;
 }
 
 .buttonLogOut {

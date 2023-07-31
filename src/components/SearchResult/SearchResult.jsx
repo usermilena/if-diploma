@@ -1,48 +1,59 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
+import { v4 as uuidv4 } from "uuid";
+
+import { useClickOutside } from "../../hooks/useClickOutside";
 import styles from "./SearchResult.module.css";
 
-export const SearchResult = memo(({ query, open }) => {
-  const [state, setState] = useState(null);
+export const SearchResult = ({ query }) => {
+  const [filteredBooks, setFilteredBooks] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef(null);
+
   const books = useSelector((state) => state.books.all);
 
+  useClickOutside(ref, () => {
+    setIsOpen(false);
+  });
+
   useEffect(() => {
-    if (!query || !open) {
-      setState(null);
-      return;
+    if (query) {
+      const filteredBooks = books.filter((book) => {
+        return (
+          book.name.toLowerCase().includes(query.toLowerCase()) ||
+          book.author.toLowerCase().includes(query.toLowerCase())
+        );
+      });
+      setFilteredBooks(filteredBooks);
+      setIsOpen(!!filteredBooks.length);
     }
-
-    const res = books.filter((book) => {
-      return (
-        book.name.toLowerCase().match(query.toLowerCase()) ||
-        book.author.toLowerCase().match(query.toLowerCase())
-      );
-    });
-    setState(res);
-  }, [query, open]);
-
-  if (!state) {
-    return null;
-  }
+  }, [query]);
 
   return (
-    <ul className={styles.wrapper}>
-      {state.map(({ id, author, imageUrl, name, released }) => (
-        <li key={id} className={styles.bookWrapper}>
-          <img
-            className={styles.image}
-            src={imageUrl}
-            alt={`Book jacket of ${name} by ${author}`}
-          />
-          <div className={styles.captionWrapper}>
-            <div className={styles.title}>{name}</div>
-            <div className={styles.subtitle}>
-              - {author}, {released}
+    <>
+      {isOpen && (
+        <ul className={styles.wrapper}>
+          {filteredBooks.map(({ id, author, imageUrl, name, released }) => (
+            <div ref={ref} key={uuidv4()}>
+              <Link className={styles.bookWrapper} to={`/${id}`}>
+                <img
+                  className={styles.image}
+                  src={imageUrl}
+                  alt={`Book jacket of ${name} by ${author}`}
+                />
+                <div className={styles.captionWrapper}>
+                  <div className={styles.title}>{name}</div>
+                  <div className={styles.subtitle}>
+                    - {author}, {released}
+                  </div>
+                </div>
+              </Link>
             </div>
-          </div>
-        </li>
-      ))}
-    </ul>
+          ))}
+        </ul>
+      )}
+    </>
   );
-});
+};
