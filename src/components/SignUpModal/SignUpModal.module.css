@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  width: 384px;
-  height: 537px;
   padding: 40px 32px;
   position: relative;
 }
@@ -12,6 +10,10 @@
   font-size: 24px;
   font-weight: 700;
   padding-bottom: 32px;
+}
+
+.button {
+  width: 100%;
 }
 
 .closeIcon {

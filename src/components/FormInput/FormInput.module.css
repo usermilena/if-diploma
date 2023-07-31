@@ -1,6 +1,9 @@
+.wrapper {
+  position: relative;
+}
+
 .label {
   font-size: 16px;
-  padding-bottom: 4px;
   color: var(--text);
 }
 
@@ -10,9 +13,16 @@
   font-size: 18px;
   padding: 9.5px 16px;
   margin-bottom: 16px;
+  margin-top: 4px;
   width: 100%;
 }
 
 .input:focus {
   border-color: var(--primary);
+}
+
+.errorInput {
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 22px / 2);
 }
